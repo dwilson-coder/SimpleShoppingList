@@ -1,0 +1,124 @@
+/* Credits: CSS inspired by True Coder
+https://github.com/sefyudem/Contact-Us-Form/blob/master/style.css */
+
+/* Font and genral layout settings */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto&display=swap');
+body {
+	height: 100vh;
+	width: 100%;
+	font-size: 16px;
+}
+h2 {
+	font-family: 'Roboto', sans-serif;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+}
+h2 {
+	position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+h2:after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	height: 4px;
+	width: 50px;
+	border-radius: 2px;
+	background-color: #2ecc71;
+}
+li {
+	list-style: none;
+	text-align: left;
+	line-height: 16px;
+	text-transform: capitalize;
+}
+.done {
+	text-decoration: line-through;
+}
+/* Container settings*/
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 100px;
+}
+.container:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url("../img/bk.jpg") no-repeat center;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+.shopping-box {
+	max-width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+.left {
+	background: #eaea5d;
+	height: 100%;
+}
+.left, .right, #userinput {
+	padding: 25px 40px;
+}
+.field {
+	width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+.field:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.field:focus {
+	border: 2px solid rgba(30, 85, 250, 0.47);
+	background-color: #fff;
+}
+button {
+	padding: 5px;
+}
+button:hover {
+	border: 1px solid rgba(30, 85, 250, 0.47);
+	transition: 0.2s
+}
+/* Making it responsive */
+
+@media screen and (max-width: 880px) {
+	.shopping-box {
+		grid-template-columns: 1fr;
+		font-size: 16px;
+	}
+	h2 {
+		font-size: 14px;
+	}
+	.left {
+		height: 200px;
+	}
+}
