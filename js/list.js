@@ -1,28 +1,28 @@
 // Assigning variables
-var button = document.getElementById("enter");
-var input = document.getElementById("userInput");
-var ul = document.querySelector("ul")
-var deleteBtns = document.getElementsByClassName("delete");
-var items = ul.getElementsByTagName("li");
+const button = document.getElementById("enter");
+const input = document.getElementById("userInput");
+const ul = document.querySelector("ul")
+const deleteBtns = document.getElementsByClassName("delete");
+const items = ul.getElementsByTagName("li");
 
 // Creating functions
-function removeParent(evt) {
+removeParent=(evt)=> {
 	evt.target.removeEventListener("click", removeParent, false);
 	evt.target.parentNode.remove();
 }
 
-function getEventTarget(e) {
+getEventTarget=(e)=> {
 	e = e || window.event;
 	return e.target || e.srcElement;
 }
 
-function addToListAfterClick() {
+addToListAfterClick=()=> {
 	if (inputLength() > 0) {
 		createListElement();
 	}
 }
 
-function addToListAfterKeypress(event) {
+ addToListAfterKeypress=(event)=> {
 	if (inputLength() > 0 && event.keyCode === 13) {
 		createListElement();
 	}
@@ -30,15 +30,15 @@ function addToListAfterKeypress(event) {
 
 
 // Adding items
-function inputLength() {
+ inputLength=() =>{
 	return input.value.length;
 }
 
-function createListElement() {
-	var btn = document.createElement("button");
+ createListElement=()=> {
+	const btn = document.createElement("button");
 	btn.innerHTML = "Delete";
 	btn.onclick = removeParent;
-	var li = document.createElement("li");
+	const li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
 	li.innerHTML = li.innerHTML + " ";
 	li.appendChild(btn);
@@ -49,14 +49,14 @@ function createListElement() {
 }
 
 // Toggle items when done
-ul.onclick = function(event) {
-	var target = getEventTarget(event);
+ul.onclick = (event)=> {
+	const target = getEventTarget(event);
 	target.classList.toggle("done");
 }
 
 
 // Removing enterItems
-for (var i = 0; i < deleteBtns.length; i++) {
+for (let i = 0; i < deleteBtns.length; i++) {
 	deleteBtns[i].addEventListener("click", removeParent, false);
 }
 
